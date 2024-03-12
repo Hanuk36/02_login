@@ -1,13 +1,13 @@
-package com.ict.model.cookie;
+package com.ict.model.session;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.ict.model.basic.Command;
 
-public class CookieJoinCommand implements Command{
+public class SessionProfileOKCommand implements Command {
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		return "view/cookie/joinForm.jsp";
+		return "view/session/detail.jsp";
+		
 	}
 }

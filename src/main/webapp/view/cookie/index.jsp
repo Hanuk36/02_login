@@ -35,7 +35,6 @@
 			<input type="hidden" name="pwd" value="${bvo.pwd }"> 
 			--%>
 			<input type="hidden" name="cmd" value="c_profile">
-			
 		</form>
 	</c:if>
 </body>

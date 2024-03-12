@@ -1,4 +1,4 @@
-package com.ict.model.cookie;
+package com.ict.model.session;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -7,10 +7,9 @@ import com.ict.db.cookie.CookieDAO;
 import com.ict.db.cookie.CookieVO;
 import com.ict.model.basic.Command;
 
-public class CookieJoinOKCommand implements Command{
+public class SessionJoinOKCommand implements Command{
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		
 		CookieVO cvo = new CookieVO();
 		cvo.setId(request.getParameter("id"));
 		cvo.setPwd(request.getParameter("pwd"));
@@ -25,6 +24,5 @@ public class CookieJoinOKCommand implements Command{
 		}else {
 			return "view/cookie/joinForm.jsp";
 		}
-	
 	}
 }
