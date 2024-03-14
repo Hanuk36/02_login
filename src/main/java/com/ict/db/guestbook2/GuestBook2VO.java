@@ -1,7 +1,7 @@
 package com.ict.db.guestbook2;
 
-public class GuestVO {
-	private String idx, name, subject, content, email, pwd, regdate ;
+public class GuestBook2VO {
+	private String idx, name, subject, content, email, pwd, f_name, regdate ;
 
 	public String getIdx() {
 		return idx;
@@ -49,6 +49,14 @@ public class GuestVO {
 
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
+	}
+
+	public String getF_name() {
+		return f_name;
+	}
+
+	public void setF_name(String f_name) {
+		this.f_name = f_name;
 	}
 
 	public String getRegdate() {

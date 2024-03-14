@@ -9,8 +9,13 @@
 <style type="text/css">
 	.form{display: inline-block;}
 </style>
+<script type="text/javascript">
+
+
+</script>
 </head>
 <body>
+
 	<c:if test="${res == null }">
 		<form action="/02_login/CookieController" method="post" class="form">
 			<input type="submit" value="로그인">

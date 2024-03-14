@@ -14,7 +14,7 @@
 <script type="text/javascript">
 	function save_go(f) {
 		// 검사 
-		f.action = "/02_login/Guest";
+		f.action = "${pageContext.request.contextPath}/GuestBook2Controller?cmd=write_ok";
 		f.submit();
 	}
 </script>
@@ -23,30 +23,28 @@
 	<div>
 		<h2>방명록 : 작성화면</h2>
 		<hr />
-		<p>[<a href="/02_login/Guest?cmd=list">목록으로 이동</a>]</p>
-		<form method="post">
+		<p>[<a href="${pageContext.request.contextPath}/GuestBook2Controller?cmd=list">목록으로 이동</a>]</p>
+		<form method="post" enctype="multipart/form-data">
 			<table>
 				<tr align="center">
 					<td bgcolor="#99ccff">작성자</td>
-					<td><input type="text" name="name" size ="20"/></td>
+					<td><input type="text" name="name" size ="20"></td>
 				</tr>
 				<tr align="center">
 					<td bgcolor="#99ccff">제  목</td>
-					<td><input type="text" name="subject" size ="20"/></td>
+					<td><input type="text" name="subject" size ="20"></td>
 				</tr>
 				<tr align="center">
 					<td bgcolor="#99ccff">email</td>
-					<td><input type="text" name="email" size ="20"/></td>
+					<td><input type="text" name="email" size ="20"></td>
 				</tr>
 				<tr align="center">
 					<td bgcolor="#99ccff">비밀번호</td>
-					<td><input type="password" name="pwd" size ="20"/></td>
+					<td><input type="password" name="pwd" size ="20"></td>
 				</tr>
 				<tr align="center">
-					<td bgcolor="#99ccff">파일</td>
-					<td><input type="file" name="pwd"/>
-					<input type="hidden" name="upload"/>
-					</td>
+					<td bgcolor="#99ccff">첨부파일</td>
+					<td><input type="file" name="f_name" size ="20"></td>
 				</tr>
 				<tr align="center">
 					<td colspan="2">
@@ -56,7 +54,8 @@
 				<tfoot>
 					<tr align="center">
 						<td colspan="2">
-						    <input type="hidden" name="cmd" value="write_ok" >
+						   <%-- enctype를 사용하면 컨틀로러에서  request.getParameter 사용 불가  --%>
+						   <%--  <input type="hidden" name="cmd" value="write_ok" > --%>
 							<input type="button" value="저장" onclick="save_go(this.form)" />
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<input type="reset" value="취소" />

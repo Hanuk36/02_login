@@ -3,11 +3,11 @@ package com.ict.model.guestbook2;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class DeleteCommand implements Command {
+import com.ict.model.basic.Command;
 
+public class DeleteCommand implements Command{
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		
 		String idx = request.getParameter("idx");
 		String pwd = request.getParameter("pwd");
 		

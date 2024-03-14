@@ -13,23 +13,23 @@
 </style>
 <script type="text/javascript">
 	function delete_go(f) {
-		//가져온 비밀번호
-	 	const pwd = "${pwd}";
-	 	const pwd2 = f.pwd.value;
-	 	if(pwd == pwd2){
-	 		const chk = confirm("정말 삭제할까요?");
-	 		if(chk){
-	 			f.action="/02_login/Guest";
-	 			f.submit();
-	 		}else{
-	 			history.go(-1); //뒤로가기 -1 앞으로가면 1
-	 		}
-	 	}else{
-	 		alert("비밀번호 틀림");
-	 		f.pwd.value="";
-	 		f.pwd.focus();
-	 		return;
-	 	}
+		//  가져온 비밀번호
+		const pwd = "${pwd}";
+		const pwd2 = f.pwd.value ;
+		if(pwd == pwd2){
+			const chk = confirm("정말삭제할까요?");
+			if(chk){
+				f.action="${pageContext.request.contextPath}/GuestBook2Controller";
+				f.submit();
+			}else{
+				history.go(-1);	
+			}
+		}else{
+			alert("비밀번호 틀림");
+			f.pwd.value="";
+			f.pwd.focus();
+			return;
+		}
 	}
 </script>
 </head>
@@ -37,7 +37,7 @@
 	<div>
 		<h2>방명록 : 삭제화면</h2>
 		<hr />
-		<p>[<a href="/02_login/Guest?cmd=list">목록으로 이동</a>]</p>
+		<p>[<a href="${pageContext.request.contextPath}/GuestBook2Controller?cmd=list">목록으로 이동</a>]</p>
 		<form method="post">
 			<table>
 				<tr align="center">
@@ -47,8 +47,8 @@
 				<tfoot>
 					<tr align="center">
 						<td colspan="2">
-						<input type="hidden" name="idx" value="${idx}">
-						<input type="hidden" name="cmd" value="delete_ok">
+							<input type="hidden" name="idx" value="${idx}">
+							<input type="hidden" name="cmd" value="delete_ok">
 							<input type="button" value="삭제" onclick="delete_go(this.form)" />
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<input type="reset" value="취소" />

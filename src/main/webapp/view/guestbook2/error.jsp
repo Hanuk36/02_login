@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="${pageContext.request.contextPath}/GuestBook2Controller" method="post">
-		<input type="hidden" name="cmd" value="list">
-		<input type="submit" value="방명록2"> 
-	</form>
+	<h1> 공 사 중 </h1>
 </body>
 </html>
